@@ -21,7 +21,7 @@ export default function Home() {
       <StepsSection />
       <BenefitsSection />
       <TableOfContentsSection />
-      {/* <OrderSection /> */}
+      <OrderSection />
       <WarrantySection />
       <FAQSection />
     </main>
