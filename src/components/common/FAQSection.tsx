@@ -42,20 +42,21 @@ const faqData = [
 
 const FAQSection = () => {
   return (
-    <section className="bg-white py-16 md:py-24">
-      <div className="max-w-4xl mx-auto px-8">
+    <section data-section="faq" className="bg-white py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
             НАЙ-ЧЕСТО ЗАДАВАНИ ВЪПРОСИ
           </h2>
         </div>
-
         <Accordion type="single" collapsible className="space-y-4">
-          {faqData.map((faq) => (
+          {faqData.map((faq, index) => (
             <AccordionItem
               key={faq.id}
               value={faq.id}
-              className="border border-gray-200 rounded-lg px-6"
+              className={`border border-gray-200 rounded-lg px-6 ${
+                index === faqData.length - 1 ? "border-b border-gray-200" : ""
+              }`}
             >
               <AccordionTrigger className="text-left text-lg font-semibold text-gray-800 hover:text-gray-600 py-4">
                 {faq.question}

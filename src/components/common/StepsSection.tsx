@@ -25,22 +25,22 @@ const stepsData = [
 const StepsSection = () => {
   return (
     <section className="bg-white py-16 md:py-24 relative">
-      <div className="max-w-6xl mx-auto px-8">
+      <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {stepsData.map((step) => (
             <Card
               key={step.id}
-              className="overflow-hidden border-0 shadow-lg bg-gradient-to-br from-green-600 to-green-800 hover:shadow-xl transition-shadow duration-300 h-full flex flex-col"
+              className="overflow-hidden border-0 shadow-lg bg-gradient-to-br from-green-700 to-green-900 hover:shadow-xl transition-shadow duration-300 h-full flex flex-col min-h-[600px]"
             >
               <CardHeader className="text-white text-center pb-3 flex-shrink-0">
-                <h3 className="font-bold text-lg">Стъпка {step.id}</h3>
+                <h3 className="font-bold text-4xl">Стъпка {step.id}</h3>
               </CardHeader>
               <CardContent className="px-6 pb-6 pt-0 flex-1 flex flex-col">
-                <h4 className="text-white text-xl font-semibold mb-3 leading-tight text-center">
+                <h4 className="text-white text-2xl font-semibold mb-8 leading-tight text-center">
                   {step.title}
                 </h4>
                 <div className="bg-white/90 text-gray-700 p-4 rounded-lg backdrop-blur-sm flex-1">
-                  <p className="text-sm leading-relaxed">{step.content}</p>
+                  <p className="text-xl leading-relaxed">{step.content}</p>
                 </div>
               </CardContent>
             </Card>

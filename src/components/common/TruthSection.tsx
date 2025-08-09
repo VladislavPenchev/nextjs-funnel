@@ -11,7 +11,7 @@ const TruthSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   ИСТИНАТА Е ЧЕ...
                 </h2>
-                <p className="text-lg leading-relaxed text-left">
+                <p className="text-xl font-semibold leading-relaxed text-left">
                   ИСТИНАТА Е ЧЕ... Животът след раздялата не е краят, а началото
                   на нова глава – изпълнена с предизвикателства, но и с
                   възможности за растеж и обновление. Истината е че детето не се
@@ -28,7 +28,7 @@ const TruthSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   НО ВИНАТА НЕ Е ТВОЯ
                 </h2>
-                <p className="text-lg leading-relaxed text-left">
+                <p className="text-xl font-semibold leading-relaxed text-left">
                   Признай, че няма място за самообвинения в пътя ти към новото
                   начало. Всяка стъпка, която правиш, е доказателство за твоята
                   сила, грижа и любов към детето. Трудностите, през които

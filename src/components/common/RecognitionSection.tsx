@@ -42,8 +42,8 @@ const RecognitionSection = () => {
         <div className="max-w-4xl mx-auto px-8">
           <Card className="border-orange-200 bg-orange-50 shadow-lg">
             <CardContent className="p-8 md:p-12">
-              <div className="space-y-6 text-gray-800 leading-relaxed">
-                <p className="text-lg">
+              <div className="space-y-6 text-gray-800 font-semibold leading-relaxed">
+                <p className="text-xl">
                   Разделихте се. Може би по взаимно съгласие, а може би не. Може
                   би още боли. А детето... пита, мълчи, сърди се и страда. А ти
                   се чудиш как да му кажеш истината, без да го нараниш. Мислиш
@@ -55,7 +55,7 @@ const RecognitionSection = () => {
                   това? Или просто съм лош родител?“
                 </p>
 
-                <p className="text-lg">
+                <p className="text-xl">
                   Ако си майка, която се чувства изоставена и трябва сама да
                   бъде силна пред детето си... Ако си баща, който се страхува,
                   че ще загуби връзката с детето си... Ако не знаеш какво да

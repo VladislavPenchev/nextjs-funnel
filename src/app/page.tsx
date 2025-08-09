@@ -9,6 +9,7 @@ import TableOfContentsSection from "@/components/common/TableOfContentsSection";
 import OrderSection from "@/components/common/OrderSection";
 import WarrantySection from "@/components/common/WarrantySection";
 import FAQSection from "@/components/common/FAQSection";
+import ScrollToTopButton from "@/components/common/ScrollToTopButton";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <OrderSection />
       <WarrantySection />
       <FAQSection />
+      <ScrollToTopButton />
     </main>
   );
 }

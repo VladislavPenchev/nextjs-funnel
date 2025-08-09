@@ -1,8 +1,30 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Gift, ShieldCheck } from "lucide-react";
 
 const ProductSection = () => {
+  const scrollToOrderForm = () => {
+    const orderForm = document.getElementById("order-form");
+    if (orderForm) {
+      orderForm.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      setTimeout(() => {
+        const firstInput = document.getElementById("fullName");
+        if (firstInput) {
+          (firstInput as HTMLInputElement).focus();
+          firstInput.style.boxShadow = "0 0 0 2px rgba(59, 130, 246, 0.5)";
+          setTimeout(() => {
+            firstInput.style.boxShadow = "";
+          }, 2000);
+        }
+      }, 800);
+    }
+  };
   return (
     <section className="bg-white py-12 md:py-20">
       <div className="max-w-6xl mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -32,7 +54,7 @@ const ProductSection = () => {
           </div>
 
           <div className="flex items-start">
-            <Gift className="flex-shrink-0 mt-1 w-10 h-10 text-red-500" />
+            <Gift className="flex-shrink-0 mt-1 w-10 h-10 text-orange-500" />
             <div className="ml-3 text-left">
               <h3 className="font-bold text-lg text-gray-700">
                 Подарък 1: Аудио афирмации за разведени родители{" "}
@@ -53,7 +75,7 @@ const ProductSection = () => {
           </div>
 
           <div className="flex items-start">
-            <Gift className="flex-shrink-0 mt-1 w-10 h-10 text-red-500" />
+            <Gift className="flex-shrink-0 mt-1 w-10 h-10 text-orange-500" />
             <div className="ml-3 text-left">
               <h3 className="font-bold text-lg text-gray-700">
                 Подарък 2: Речник на детските нужди{" "}
@@ -77,14 +99,17 @@ const ProductSection = () => {
             </p>
             <p className="text-4xl md:text-4xl font-bold text-gray-700 mt-2">
               САМО СЕГА{" "}
-              <span className="text-3xl md:text-3xl font-bold text-orange-500 line-through mt-2">
+              <span className="text-3xl md:text-3xl font-bold text-orange-500 mt-2">
                 29.90лв / €15.29
               </span>
             </p>
           </div>
 
           <div className="text-center mt-4">
-            <Button className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-8 px-16 rounded-full text-xl transition-colors duration-300 cursor-pointer w-full max-w-md">
+            <Button
+              onClick={scrollToOrderForm}
+              className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-8 px-22 rounded-full text-xl transition-colors duration-300 cursor-pointer w-full max-w-lg"
+            >
               <div className="flex flex-col items-center">
                 <p className="text-xl font-bold">КУПИ СЕГА</p>
                 <p className="text-sm font-normal">

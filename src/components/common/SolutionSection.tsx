@@ -7,7 +7,7 @@ const SolutionSection = () => {
             Какво е решението?
           </h2>
 
-          <div className="space-y-6 text-gray-800 leading-relaxed text-lg">
+          <div className="space-y-6 text-gray-800 leading-relaxed text-xl font-semibold">
             <p>
               Представи си, че връзката между теб и детето ти е като тиха,
               невидима нишка. Тя не се къса лесно, но с времето, ако не я

@@ -18,7 +18,7 @@ const BenefitsSection = () => {
           Кажи сбогом на чувството, че губиш връзката с детето си като
         </h2>
 
-        <p className="text-xl text-gray-700 mb-8 text-center">
+        <p className="text-2xl font-semibold text-gray-700 mb-8 text-center">
           Най-накрая ще можеш да:
         </p>
 
@@ -31,14 +31,14 @@ const BenefitsSection = () => {
               <span className="text-green-600 text-xl font-bold w-6 text-center flex-shrink-0 mt-1">
                 ✔
               </span>
-              <span className="text-gray-800 text-lg leading-relaxed">
+              <span className="text-gray-800 text-xl font-semibold leading-relaxed">
                 {benefit}
               </span>
             </div>
           ))}
         </div>
 
-        <p className="text-xl text-gray-700 mb-6 text-center">
+        <p className="text-2xl font-semibold text-gray-700 mb-6 text-center">
           И всичко това без да:
         </p>
 
@@ -51,7 +51,7 @@ const BenefitsSection = () => {
               <span className="text-red-600 text-xl font-bold w-6 text-center flex-shrink-0 mt-1">
                 Х
               </span>
-              <span className="text-gray-800 text-lg leading-relaxed">
+              <span className="text-gray-800 text-xl font-semibold leading-relaxed">
                 {item}
               </span>
             </div>

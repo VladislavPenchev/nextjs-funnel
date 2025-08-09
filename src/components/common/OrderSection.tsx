@@ -43,10 +43,19 @@ const OrderSection = () => {
 
       if (error) {
         console.error("Error inserting order:", error);
+        alert("Грешка при изпращане на поръчката. Моля, опитайте отново.");
       } else {
         reset();
-        // Можете да пренасочите към страница за благодарност
-        // window.location.href = '/thank-you';
+        // Track successful order
+        if (typeof window !== "undefined" && window.gtag) {
+          window.gtag("event", "purchase", {
+            event_category: "ecommerce",
+            event_label: "Book Purchase - ЩАСТЛИВО РАЗВЕДЕНИ",
+            value: 29.9,
+          });
+        }
+        // Redirect to thank you page
+        window.location.href = "/thank-you";
       }
     } catch (error) {
       console.error("Error submitting order:", error);
@@ -55,7 +64,7 @@ const OrderSection = () => {
   };
 
   return (
-    <section className="bg-white py-16 md:py-24">
+    <section id="order-form" className="bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Left Column - Product Info */}
@@ -194,8 +203,9 @@ const OrderSection = () => {
                         type="radio"
                         name="deliveryMethod"
                         value="speedy-office"
-                        checked
+                        defaultChecked
                         className="w-5 h-5"
+                        suppressHydrationWarning
                       />
                       <span className="text-gray-800 font-medium">
                         ДОСТАВКА ДО ОФИС НА СПИДИ
@@ -218,8 +228,9 @@ const OrderSection = () => {
                       type="radio"
                       name="paymentMethod"
                       value="cash-on-delivery"
-                      checked
+                      defaultChecked
                       className="w-5 h-5"
+                      suppressHydrationWarning
                     />
                     <Label htmlFor="cashOnDelivery">Наложен платеж</Label>
                   </div>
@@ -286,7 +297,7 @@ const OrderSection = () => {
               <div className="text-center mt-4">
                 <Button className="bg-gray-800 hover:bg-gray-700 text-white font-bold py-8 px-16 rounded-full text-xl transition-colors duration-300 cursor-pointer w-full max-w-md">
                   <div className="flex flex-col items-center">
-                    <p className="text-xl font-bold"> ВЗЕМИ ОФЕРТАТА ✓</p>
+                    <p className="text-xl font-bold">ПОРЪЧАЙ СЕГА</p>
                   </div>
                 </Button>
               </div>
