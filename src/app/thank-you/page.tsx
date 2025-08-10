@@ -23,6 +23,18 @@ const ThankYouPage = () => {
         event_label: "Thank You Page",
       });
     }
+
+    // Clear the order completion cookie when leaving the page
+    const handleBeforeUnload = () => {
+      document.cookie =
+        "order-completed=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+    };
+
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, []);
 
   return (
@@ -155,62 +167,6 @@ const ThankYouPage = () => {
                       29.90лв
                     </span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Next Steps */}
-        <Card className="mb-8">
-          <CardContent className="p-8">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-              Следващи стъпки
-            </h3>
-
-            <div className="space-y-4">
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
-                  1
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800">
-                    Потвърждение на поръчката
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    Ще получите обаждане в рамките на 24 часа за потвърждение на
-                    данните и адреса за доставка.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
-                  2
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800">
-                    Изпращане на книгата
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    След потвърждение, книгата ще бъде изпратена до избрания от
-                    Вас офис на Спиди.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start space-x-4">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
-                  3
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-800">
-                    Получаване на бонусите
-                  </h4>
-                  <p className="text-gray-600 text-sm">
-                    Аудио афирмациите и речника ще получите по имейл след
-                    потвърждение на поръчката.
-                  </p>
                 </div>
               </div>
             </div>

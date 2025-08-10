@@ -54,6 +54,10 @@ const OrderSection = () => {
             value: 29.9,
           });
         }
+
+        // Set completion cookie for middleware protection
+        document.cookie = "order-completed=true; path=/; max-age=3600"; // Expires in 1 hour
+
         // Redirect to thank you page
         window.location.href = "/thank-you";
       }
